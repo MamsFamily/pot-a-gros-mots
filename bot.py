@@ -16,7 +16,7 @@ JAR_USER_ID = int(os.getenv("JAR_USER_ID", "0"))
 IGNORED_CHANNEL_IDS = [int(x) for x in os.getenv("IGNORED_CHANNEL_IDS", "").split(",") if x.strip().isdigit()]
 
 MONNAIE_NOM = os.getenv("CURRENCY_NAME", "diamants")
-MONTANT_DEPART = int(os.getenv("BASE_FINE", "100"))
+MONTANT_DEPART = int(os.getenv("BASE_FINE", "50"))
 FENETRE_H = int(os.getenv("WINDOW_HOURS", "24"))
 USE_BANK = os.getenv("USE_BANK", "0") == "1"
 WORDLIST_PATH = os.getenv("WORDLIST_PATH", "data/wordlist_fr.txt")
@@ -421,18 +421,14 @@ async def on_message(message: discord.Message):
             offenses = st["offenses"] + 1
             set_user_state(user_id, st["window_start"], offenses, st["contest_used_at"])
 
-        if offenses == 1:
-            line = random.choice(WARNING_LINES).format(user=message.author.mention, money=MONNAIE_NOM)
-            await message.channel.send(line)
-        else:
-            fine = (offenses - 1) * MONTANT_DEPART
-            try:
-                await apply_fine(user_id, fine)
-            except Exception as e:
-                await message.channel.send(f"⚠️ Impossible d'appliquer l'amende (API) : {e}")
-                return
-            line = random.choice(FINE_LINES).format(user=message.author.mention, amount=fine, money=MONNAIE_NOM)
-            await message.channel.send(line)
+        fine = offenses * MONTANT_DEPART
+        try:
+            await apply_fine(user_id, fine)
+        except Exception as e:
+            await message.channel.send(f"⚠️ Impossible d'appliquer l'amende (API) : {e}")
+            return
+        line = random.choice(FINE_LINES).format(user=message.author.mention, amount=fine, money=MONNAIE_NOM)
+        await message.channel.send(line)
 
     await bot.process_commands(message)
 

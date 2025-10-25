@@ -1,6 +1,6 @@
 # Arki'Family — Swear Jar Bot (Discord + UnbelievaBoat)
 
-Bot "pot à gros mots" bon enfant : avertissement, amendes progressives (100 → 200 → 300 …) sur 24h,
+Bot "pot à gros mots" bon enfant : amendes progressives dès la 1ère infraction (50 → 100 → 150 → 200…) sur 24h,
 intégration UnbelievaBoat (débit joueur + crédit de la jarre), contestation 1×/24h, salons ignorés,
 liste FR de gros mots **extensible en live** via commandes slash.
 
@@ -41,7 +41,7 @@ Le bot détecte automatiquement les phrases comme **"ta mère"**, **"ta grand-m�
 
 ## Variables utiles (.env)
 - `CURRENCY_NAME` — nom d'affichage de la monnaie (ex: diamants)
-- `BASE_FINE` — palier d'amende (100 → 200 → 300 …)
+- `BASE_FINE` — montant de base de l'amende (50 par défaut, progression : 50 → 100 → 150…)
 - `WINDOW_HOURS` — durée de la fenêtre (24h par défaut)
 - `USE_BANK` — `1` pour utiliser la *bank* UnbelievaBoat au lieu du *cash*
 - `WORDLIST_PATH` — chemin vers le fichier de liste (par défaut `data/wordlist_fr.txt`)

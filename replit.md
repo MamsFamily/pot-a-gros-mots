@@ -1,11 +1,11 @@
 # Arki'Family — Bot Discord "Pot à Gros Mots"
 
 ## Vue d'ensemble
-Bot Discord français pour serveur de gaming Arki'Family qui détecte automatiquement les gros mots et applique des amendes progressives via l'API UnbelievaBoat. Système ludique et bon enfant avec des punchlines amusantes inspirées du jeu ARK.
+Bot Discord français pour serveur de gaming Arki'Family qui détecte automatiquement les gros mots et applique des amendes progressives dès la première infraction via l'API UnbelievaBoat. Système ludique et bon enfant avec des punchlines amusantes inspirées du jeu ARK.
 
 ## État actuel (25 octobre 2025)
 - ✅ Bot Discord fonctionnel avec détection automatique de gros mots (regex)
-- ✅ Système d'amendes progressives (100 → 200 → 300 diamants sur 24h)
+- ✅ Système d'amendes progressives dès la 1ère infraction (50 → 100 → 150 → 200 diamants sur 24h)
 - ✅ Intégration complète avec UnbelievaBoat API
 - ✅ Système de contestation (1 fois par 24h)
 - ✅ Gestion dynamique de la liste de mots via commandes slash
@@ -54,24 +54,21 @@ Bot Discord français pour serveur de gaming Arki'Family qui détecte automatiqu
 - **Aucune amende** appliquée, juste un rappel bon enfant
 - Fonctionne dans tous les salons (même non ignorés)
 
-### 3. Détection automatique
+### 3. Détection automatique et amendes
 - Scan de tous les messages du serveur
 - Détection via regex (liste extensible)
-- Premier gros mot = avertissement ludique
-- Gros mots suivants = amendes progressives
-
-### 4. Système d'amendes
+- **Amende dès la 1ère infraction** (pas d'avertissement gratuit)
 - **Fenêtre de 24h** : Les infractions s'accumulent sur 24h
-- **Progression** : 100 → 200 → 300 → 400 diamants...
+- **Progression** : 50 → 100 → 150 → 200 → 250 diamants... (progression de 50 en 50)
 - **Débit automatique** via UnbelievaBoat
 - **Crédit du pot** : Les amendes vont au compte-jarre
 
-### 5. Contestation
+### 4. Contestation
 - 1 contestation par joueur toutes les 24h
 - Acceptation automatique si raison valable (contexte, citation, etc.)
 - Remboursement depuis le pot vers le joueur
 
-### 6. Commandes slash (Admin)
+### 5. Commandes slash (Admin)
 
 **Gestion des salons ignorés :**
 - `/jar_ignore_add #salon` - Ignorer un salon
@@ -165,8 +162,7 @@ La liste peut être modifiée :
 Le bot utilise des messages aléatoires thématiques ARK pour :
 - **Ping/Mention** (20 variantes) : Quand le bot est mentionné
 - **Rappel familial** (15 variantes) : Détection "ta mère", "ta grand-mère", "ta sœur"
-- **Avertissements** (15 variantes) : Premier gros mot
-- **Amendes** (18 variantes) : Gros mots suivants
+- **Amendes** (18 variantes) : Détection de gros mots (dès la 1ère infraction)
 - **Contestation acceptée** (7 variantes)
 - **Contestation refusée** (7 variantes)
 
@@ -234,6 +230,7 @@ Pour toute question ou problème :
 - Configuration du workflow
 - Ajout de la fonctionnalité de réponse au ping (20 phrases thématiques)
 - Ajout de la détection "ta mère/grand-mère/sœur" avec réponses humoristiques (15 variantes)
+- Modification du système d'amendes : suppression de l'avertissement gratuit, amendes dès la 1ère infraction (50 → 100 → 150...)
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)
