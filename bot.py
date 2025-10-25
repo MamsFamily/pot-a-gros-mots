@@ -120,6 +120,8 @@ FAMILY_ROAST_RESPONSES = [
 ]
 
 _last_pick = {"warn": None, "fine": None, "ok": None, "ko": None, "ping": None, "family": None}
+_last_family_response_time = 0
+
 def pick_line(pool, key):
     if not pool: return ""
     if len(pool) == 1: return pool[0]
@@ -417,8 +419,12 @@ async def on_message(message: discord.Message):
     
     family_pattern = re.compile(r'\b(ta\s+(m[eè]re|grand[\s\-]?m[eè]re|s[oœ]eur|daronne|reume))\b', re.IGNORECASE)
     if family_pattern.search(content):
-        line = pick_line(FAMILY_ROAST_RESPONSES, "family")
-        await message.channel.send(line)
+        global _last_family_response_time
+        now = now_ts()
+        if now - _last_family_response_time >= 60:
+            _last_family_response_time = now
+            line = pick_line(FAMILY_ROAST_RESPONSES, "family")
+            await message.channel.send(line)
         return
     
     if not GROS_MOTS_RE:

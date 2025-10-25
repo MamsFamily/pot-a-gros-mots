@@ -19,7 +19,9 @@ liste FR de gros mots **extensible en live** via commandes slash.
 Mentionnez le bot avec `@BotName` et il répondra avec une phrase aléatoire pour signaler qu'il est actif et surveille (20 variantes thématiques ARK).
 
 ### Rappel de respect familial (sans amende)
-Le bot détecte automatiquement les phrases comme **"ta mère"**, **"ta grand-mère"**, **"ta sœur"** et répond avec humour pour rappeler le respect des familles. Aucune amende n'est appliquée, juste un petit rappel bon enfant thématique ARK !
+Le bot détecte automatiquement les phrases comme **"ta mère"**, **"ta grand-mère"**, **"ta sœur"** et répond avec humour pour rappeler le respect des familles. Aucune amende n'est appliquée, juste un petit rappel bon enfant thématique ARK ! 
+
+**Cooldown anti-spam** : Le bot ne répond qu'**une seule fois par minute** maximum, même si "ta mère" est écrit plusieurs fois.
 
 ### Commandes slash (admin = Manage Server requis)
 - `/jar_ignore_add #salon` — ignorer un salon

@@ -52,6 +52,7 @@ Bot Discord français pour serveur de gaming Arki'Family qui détecte automatiqu
 - Détecte automatiquement "ta mère", "ta grand-mère", "ta sœur" (et variantes)
 - Répond avec humour (15 phrases thématiques ARK)
 - **Aucune amende** appliquée, juste un rappel bon enfant
+- **Cooldown anti-spam** : Une seule réponse par minute maximum
 - Fonctionne dans tous les salons (même non ignorés)
 
 ### 3. Détection automatique et amendes
@@ -236,6 +237,7 @@ Pour toute question ou problème :
 - Modification du système d'amendes : suppression de l'avertissement gratuit, amendes dès la 1ère infraction (50 → 100 → 150...)
 - Ajout de la commande admin `/jar_reset joueur:` pour réinitialiser le compteur d'un joueur spécifique
 - Ajout d'un rappel automatique pour contester l'amende (quand encore possible)
+- Ajout d'un cooldown de 60 secondes sur les réponses "famille" pour éviter le spam
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)
