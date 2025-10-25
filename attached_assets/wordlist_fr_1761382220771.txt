@@ -1,0 +1,130 @@
+# Liste FR large (regex). Lignes vides et préfixées # sont ignorées.
+# Conseils :
+# - Préférez des \b bornes de mots quand c'est pertinent pour limiter les faux positifs.
+# - Ajoutez des variantes avec accents, pluriels, et "leet" simple.
+# - Testez avec /jar_word_test avant validation en prod.
+
+\bmerde(s)?\b
+\bpu(te|t[eé]e)s?\b
+\bput[ae]in(s)?\b
+p\W*?t[ua]in
+\bptn\b
+\bpunaise(s)?\b
+\bencul[eé]?(s|r|rs|es)?\b
+\bniq(u|ue|er|e|es|eurs)\w*\b
+\bnique( ta| sa| ton| ta )?m[eè]r[e]?
+\bfdp\b
+\fils\W*de\W*pute
+\bbatard(s|es)?\b
+\bb[âa]tards?\b
+\bsalope?s?\b
+\bsalop(ard|ards|erie|eries)\b
+\bsalaud(s|e|es)?\b
+\bconn?ard(s|e|es)?\b
+\bgogol(s|e|es)?\b
+\benfoir[eé]?(e|es|s)?\b
+\bespece\W*de\W*(con|idiot|imb[ée]cile)
+\besp[eè]ce\W*de\W*(con|idiot|imb[ée]cile)
+\bcasse(-|\s)?couilles?\b
+\bcouillon(s|ne|nes)?\b
+\bp[eé]tasse(s)?\b
+\bp[eé]t[eè]te\b
+\bp[eé]tard(s)?\b
+\benflure(s)?\b
+\bto[cn]ard(s)?\b
+\btocard(s)?\b
+\bbourricot(s)?\b
+\babruti(e|s|es)?\b
+\bd[ée]bile(s)?\b
+\bd[eé]bilos?\b
+\bd[eé]bilo(s)?\b
+\bidio(t|te|ts|tes)\b
+\bbb[cç]h?\w*\b
+\bbordel(s)?\b
+\bbite(s)?\b
+\bzboub(s)?\b
+\bgland(s)?\b
+\bcouilles?\b
+\bouiche(s)?\b
+\bp[ée]nis\b
+\bch[ée]t(ar|ard|ards|e|es)\b
+\bfion(s)?\b
+\bcul(s)?\b
+\bar(r)?i[eè]re?\b
+\bar(r)?i[eè]res?\b
+\banus\b
+\bbougnoule(s)?\b
+\bnaze(s)?\b
+\bnazebroque\b
+\bnazebroks?\b
+\bpouf(f|fe|fes)?\b
+\bpouffiasse(s)?\b
+\bpoufiasse(s)?\b
+\bgarce(s)?\b
+\btarlouze(s)?\b
+\bp[ée]d[ée]s?\b
+\btapette(s)?\b
+\bgouine(s)?\b
+\bgourdasse(s)?\b
+\btrou\W*du\W*cul\b
+\btg\b
+\nta gueule
+\nta\W?guele
+\nta\W?gueul
+\bla ferme
+\bla\W?ferme\W?stp
+\bfouter\b
+\bje m'en fous\b
+\bm'en fous\b
+\bm'en tape\b
+\bta race\b
+\bnique ta m[eè]re\b
+\bntm\b
+\bpute\b
+\bchi[ée]r\b
+\bd[ée]gueulas(se)?\b
+\bgueule\b
+\bg[ue]u?eule(s)?\b
+\bsuce(r|e|s)?\b
+\bsuce\W?boules?\b
+\bsuceur(s|euse|euses)?\b
+\bsaloperie(s)?\b
+\bsalet[ée]s?\b
+\bfais chier\b
+\bfait chier\b
+\bd[ée]gage\b
+\bt'es con(ne)?\b
+\bt con(ne)?\b
+\bt'as merd[ée]\b
+\bt'as foir[ée]\b
+\bva te faire foutre\b
+\bvtff\b
+\bnique\b
+\bfoutre\b
+\bfoutu(e|es|s)?\b
+\bchi[ae]nt?\b
+\bmerdi(que|ques)?\b
+\bp[ée]tain\b
+\bp'tain\b
+\bp\*tain\b
+\bp\.\s*tain\b
+\bp\W*tain\b
+\bsalope\b
+\benflure\b
+\btarlouze\b
+\bgougnafier(s)?\b
+\bgougnafie\b
+\besquimau(x)?\b
+\besquimaude?\b
+\besclave(s)?\b
+# variantes accent/leet supplémentaires
+b[a@]t[a@]rd
+s[a@]l[o0]p[e3]
+c[o0]nn[a@]rd
+p[u*]t[a@]in
+encul[e3]
+fdp
+tg
+ntm
+pd
+# Fin de liste
