@@ -121,6 +121,7 @@ FAMILY_ROAST_RESPONSES = [
 
 _last_pick = {"warn": None, "fine": None, "ok": None, "ko": None, "ping": None, "family": None}
 _last_family_response_time = 0
+_processed_messages = set()
 
 def pick_line(pool, key):
     if not pool: return ""
@@ -404,6 +405,13 @@ async def on_message(message: discord.Message):
         return
     if message.guild.id != GUILD_ID:
         return
+    
+    global _processed_messages
+    if message.id in _processed_messages:
+        return
+    _processed_messages.add(message.id)
+    if len(_processed_messages) > 1000:
+        _processed_messages = set(list(_processed_messages)[-500:])
     
     content = message.content or ""
     

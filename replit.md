@@ -238,6 +238,7 @@ Pour toute question ou problème :
 - Ajout de la commande admin `/jar_reset joueur:` pour réinitialiser le compteur d'un joueur spécifique
 - Ajout d'un rappel automatique pour contester l'amende (quand encore possible)
 - Ajout d'un cooldown de 60 secondes sur les réponses "famille" pour éviter le spam
+- Ajout d'un système de déduplication des messages pour garantir une seule réponse par message
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)
