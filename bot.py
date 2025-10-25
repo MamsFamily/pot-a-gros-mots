@@ -344,6 +344,17 @@ async def jar_word_test(interaction: discord.Interaction, texte: str):
     extra = "" if len(matches) <= 30 else f"\n… et {len(matches)-30} de plus."
     await interaction.response.send_message(f"⚠️ Motifs détectés ({len(matches)}) :\n{preview}{extra}")
 
+@tree.command(description="Réinitialiser tous les compteurs d'infractions (Admin)")
+@app_commands.checks.has_permissions(manage_guild=True)
+async def jar_reset(interaction: discord.Interaction):
+    conn = sqlite3.connect("jar.db")
+    c = conn.cursor()
+    c.execute("DELETE FROM user_state")
+    conn.commit()
+    count = c.rowcount
+    conn.close()
+    await interaction.response.send_message(f"🔄 Compteurs réinitialisés ! {count} joueur(s) remis à zéro. Prochain gros mot = 50 {MONNAIE_NOM}.")
+
 # ---------- CONTESTATION ----------
 @tree.command(description="Contester la dernière amende (1 fois / 24h)")
 async def contester(interaction: discord.Interaction, raison: str):

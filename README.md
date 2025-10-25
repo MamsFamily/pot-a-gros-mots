@@ -36,6 +36,9 @@ Le bot détecte automatiquement les phrases comme **"ta mère"**, **"ta grand-m�
 - `/jar_word_reload` — recharge le fichier (utile après édition manuelle)
 - `/jar_word_test texte:` — teste une phrase et montre les motifs qui détectent
 
+### Gestion du système
+- `/jar_reset` — réinitialise tous les compteurs d'infractions (remet tout le monde à 0)
+
 > Les motifs sont des **regex Python**. Voir `data/wordlist_fr.txt` pour des exemples.
 > Lignes vides ou commençant par `#` sont ignorées.
 
