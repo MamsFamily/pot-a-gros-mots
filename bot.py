@@ -366,9 +366,9 @@ async def contester(interaction: discord.Interaction, raison: str):
     st = get_user_state(user_id)
     now = now_ts()
     if not st or st["offenses"] <= 1 or window_expired(st["window_start"]):
-        return await interaction.response.send_message("Rien à contester pour l'instant 👍", ephemeral=True)
+        return await interaction.response.send_message(f"{interaction.user.mention} Rien à contester pour l'instant 👍")
     if st["contest_used_at"] and now - st["contest_used_at"] < 24*3600:
-        return await interaction.response.send_message("⛔ Tu as déjà contesté dans les dernières 24h.", ephemeral=True)
+        return await interaction.response.send_message(f"{interaction.user.mention} ⛔ Tu as déjà contesté dans les dernières 24h.")
 
     last_amount = (st["offenses"] - 1) * MONTANT_DEPART
     approve = looks_like_context("", raison)
@@ -377,7 +377,7 @@ async def contester(interaction: discord.Interaction, raison: str):
         try:
             await refund_from_jar_to_user(user_id, last_amount)
         except Exception as e:
-            return await interaction.response.send_message(f"Erreur API lors du remboursement : {e}", ephemeral=True)
+            return await interaction.response.send_message(f"{interaction.user.mention} Erreur API lors du remboursement : {e}")
         new_off = st["offenses"] - 1
         set_user_state(user_id, st["window_start"], new_off, now)
         line = random.choice(CONTEST_ACCEPTED).format(user=interaction.user.mention, amount=last_amount, money=MONNAIE_NOM)
@@ -385,7 +385,7 @@ async def contester(interaction: discord.Interaction, raison: str):
     else:
         set_user_state(user_id, st["window_start"], st["offenses"], now)
         line = random.choice(CONTEST_DENIED).format(user=interaction.user.mention)
-        await interaction.response.send_message(line, ephemeral=True)
+        await interaction.response.send_message(line)
 
 # ---------- EVENTS ----------
 @bot.event

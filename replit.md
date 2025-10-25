@@ -68,6 +68,7 @@ Bot Discord français pour serveur de gaming Arki'Family qui détecte automatiqu
 - 1 contestation par joueur toutes les 24h
 - Acceptation automatique si raison valable (contexte, citation, etc.)
 - Remboursement depuis le pot vers le joueur
+- **Résultats publics** : Acceptations et refus visibles de tous dans le salon
 
 ### 5. Commandes slash (Admin)
 
@@ -240,6 +241,7 @@ Pour toute question ou problème :
 - Ajout d'un cooldown de 60 secondes sur les réponses "famille" pour éviter le spam
 - Ajout d'un système de déduplication des messages pour garantir une seule réponse par message
 - Ping systématique du joueur au début du message d'amende pour notification garantie
+- Résultats de contestation rendus publics (visible de tous au lieu de privé)
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)
