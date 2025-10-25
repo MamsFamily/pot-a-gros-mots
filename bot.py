@@ -344,16 +344,20 @@ async def jar_word_test(interaction: discord.Interaction, texte: str):
     extra = "" if len(matches) <= 30 else f"\n… et {len(matches)-30} de plus."
     await interaction.response.send_message(f"⚠️ Motifs détectés ({len(matches)}) :\n{preview}{extra}")
 
-@tree.command(description="Réinitialiser tous les compteurs d'infractions (Admin)")
+@tree.command(description="Réinitialiser le compteur d'infractions d'un joueur (Admin)")
 @app_commands.checks.has_permissions(manage_guild=True)
-async def jar_reset(interaction: discord.Interaction):
+async def jar_reset(interaction: discord.Interaction, joueur: discord.User):
+    user_id = joueur.id
     conn = sqlite3.connect("jar.db")
     c = conn.cursor()
-    c.execute("DELETE FROM user_state")
+    c.execute("DELETE FROM user_state WHERE user_id = ?", (user_id,))
     conn.commit()
-    count = c.rowcount
+    deleted = c.rowcount
     conn.close()
-    await interaction.response.send_message(f"🔄 Compteurs réinitialisés ! {count} joueur(s) remis à zéro. Prochain gros mot = 50 {MONNAIE_NOM}.")
+    if deleted > 0:
+        await interaction.response.send_message(f"🔄 Compteur réinitialisé pour {joueur.mention} ! Prochain gros mot = 50 {MONNAIE_NOM}.")
+    else:
+        await interaction.response.send_message(f"Aucune infraction trouvée pour {joueur.mention}.", ephemeral=True)
 
 # ---------- CONTESTATION ----------
 @tree.command(description="Contester la dernière amende (1 fois / 24h)")
@@ -439,6 +443,11 @@ async def on_message(message: discord.Message):
             await message.channel.send(f"⚠️ Impossible d'appliquer l'amende (API) : {e}")
             return
         line = random.choice(FINE_LINES).format(user=message.author.mention, amount=fine, money=MONNAIE_NOM)
+        
+        can_contest = not (st and st["contest_used_at"] and now - st["contest_used_at"] < 24*3600)
+        if can_contest:
+            line += f"\n💡 Tu peux contester avec `/contester raison:` (1×/24h)."
+        
         await message.channel.send(line)
 
     await bot.process_commands(message)

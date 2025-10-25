@@ -83,7 +83,7 @@ Bot Discord français pour serveur de gaming Arki'Family qui détecte automatiqu
 - `/jar_word_test texte:` - Tester un texte
 
 **Gestion du système :**
-- `/jar_reset` - Réinitialiser tous les compteurs d'infractions
+- `/jar_reset joueur:` - Réinitialiser le compteur d'infractions d'un joueur spécifique
 
 **Contestation (utilisateurs) :**
 - `/contester raison:` - Contester la dernière amende
@@ -234,7 +234,8 @@ Pour toute question ou problème :
 - Ajout de la fonctionnalité de réponse au ping (20 phrases thématiques)
 - Ajout de la détection "ta mère/grand-mère/sœur" avec réponses humoristiques (15 variantes)
 - Modification du système d'amendes : suppression de l'avertissement gratuit, amendes dès la 1ère infraction (50 → 100 → 150...)
-- Ajout de la commande admin `/jar_reset` pour réinitialiser tous les compteurs d'infractions
+- Ajout de la commande admin `/jar_reset joueur:` pour réinitialiser le compteur d'un joueur spécifique
+- Ajout d'un rappel automatique pour contester l'amende (quand encore possible)
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)
