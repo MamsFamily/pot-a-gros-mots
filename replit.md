@@ -233,8 +233,8 @@ Pour toute question ou problème :
 - Installation de Python 3.11 et dépendances
 - Création de la structure de fichiers
 - Configuration du workflow
-- Ajout de la fonctionnalité de réponse au ping (20 phrases thématiques)
-- Ajout de la détection "ta mère/grand-mère/sœur" avec réponses humoristiques (15 variantes)
+- Ajout de la fonctionnalité de réponse au ping (30 phrases thématiques → doublé !)
+- Ajout de la détection "ta mère/grand-mère/sœur" avec réponses humoristiques (25 variantes → augmenté !)
 - Modification du système d'amendes : suppression de l'avertissement gratuit, amendes dès la 1ère infraction (50 → 100 → 150...)
 - Ajout de la commande admin `/jar_reset joueur:` pour réinitialiser le compteur d'un joueur spécifique
 - Ajout d'un rappel automatique pour contester l'amende (quand encore possible)
@@ -242,6 +242,8 @@ Pour toute question ou problème :
 - Ajout d'un système de déduplication des messages pour garantir une seule réponse par message
 - Ping systématique du joueur au début du message d'amende pour notification garantie
 - Résultats de contestation rendus publics (visible de tous au lieu de privé)
+- **Enrichissement massif des phrases** : 33 amendes, 15 acceptations, 15 refus, 30 pings, 25 réponses famille
+- **Amélioration de la rotation** : système anti-répétition pour toutes les catégories de phrases
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)

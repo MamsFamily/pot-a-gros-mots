@@ -60,6 +60,21 @@ FINE_LINES = [
     "Tu viens de financer le spa des loutres 🦦 Merci pour les -{amount} {money}, {user} !",
     "Alerte pot à gros mots ! {user} perd -{amount} {money}. La prochaine fois, respire avant de taper 😮‍💨",
     "Les Nameless murmurent : *'Encore un mot et on double le tarif…'* 😏 -{amount} {money} prélevés.",
+    "Le Reaper te fixe dans le noir… -{amount} {money} 👁️ {user}. Reste respectueux !",
+    "Les Tek-engrammes affichent : AMENDE -{amount} {money} ⚡ {user}, on calme le langage !",
+    "Un Wyverne a entendu ça… 🐲 Il t'a taxé -{amount} {money}. Attention au vocabulaire !",
+    "Même un parasaure trouve ça déplacé 🦕 {user}, -{amount} {money} de pénalité !",
+    "L'Obélisque rouge s'active… 🔴 Transfert de -{amount} {money} vers le pot. Merci {user} !",
+    "Les Gacha désapprouvent 😔 {user} perd -{amount} {money}. Prochain drop : du respect !",
+    "La Reine des Reapers te juge 👑 {user}, contribution forcée : -{amount} {money}.",
+    "Le Basilosaurus ne comprend pas ce langage 🐋 -{amount} {money} pour apprendre la politesse !",
+    "Même les Troodons trouvent ça toxique 🦎 {user} : -{amount} {money} prélevés.",
+    "Un Giganotosaure fronce les sourcils 🦖 {user}, amende de -{amount} {money}. Respire profond !",
+    "Les Managarmr glacent ton compte ❄️ -{amount} {money} retirés. Réchauffe tes mots, {user} !",
+    "Le Scout te scanne : VULGARITÉ DÉTECTÉE 🤖 -{amount} {money} débités. Reste friendly !",
+    "Un Griffin t'observe du ciel 🦅 {user}, il a prélevé -{amount} {money} au passage.",
+    "Les TEK-stryders calculent : AMENDE = -{amount} {money} 🤖 {user}, on garde ça clean !",
+    "Le pot vibre de colère légère… 🌪️ -{amount} {money} aspirés. Calme-toi {user} !",
 ]
 CONTEST_ACCEPTED = [
     "✅ Contestation acceptée ! Les esprits de l'ARK sont cléments. {amount} {money} remboursés 💎",
@@ -69,6 +84,14 @@ CONTEST_ACCEPTED = [
     "C'est ton jour de chance, {user} ! Le pot a levé la main : {amount} {money} remboursés ✨",
     "Un bulbdog t'a défendu au tribunal des mots doux 🐶 +{amount} {money} récupérés.",
     "Les dinos juges ont voté : *non coupable* 🦖 +{amount} {money} remis à {user}.",
+    "Le Phœnix renaît de ses cendres 🔥 et ramène tes {amount} {money}, {user} !",
+    "L'Obélisque vert approuve ta demande ✅ Téléportation de {amount} {money} en cours…",
+    "Les Gacha ont eu pitié 😊 Cadeau surprise : {amount} {money} récupérés !",
+    "La tribu a voté en ta faveur 🗳️ {user}, tu récupères {amount} {money} !",
+    "Un Griffin apporte le pardon du ciel 🦅 +{amount} {money} remboursés, {user} !",
+    "Le conseil des Ravageurs accepte ton argument 🐾 {amount} {money} restitués.",
+    "Les Tek-rapaces jugent : INNOCENT ⚖️ +{amount} {money} pour {user} !",
+    "Le Yutyrannus rugit de clémence 🦖 {amount} {money} retournent à {user} !",
 ]
 CONTEST_DENIED = [
     "❌ Contestation refusée. Les spores sont formelles : on reste fair-play ✨",
@@ -78,6 +101,14 @@ CONTEST_DENIED = [
     "Hmmm {user}, belle tentative, mais le pot n'oublie rien 😏 On passe à autre chose ?",
     "Les ancêtres chuchotent : 'Non, pas cette fois…' 🌌 Amende maintenue !",
     "Le bulbdog a levé un sourcil 👀 → contestation refusée. Essaie avec un câlin la prochaine fois 💙",
+    "L'Obélisque rouge clignote : REFUSÉ 🔴 {user}, l'amende reste valide.",
+    "Les Tek-juges calculent : EXCUSE INSUFFISANTE 🤖 Amende confirmée.",
+    "Le Giganotosaure grogne un NON catégorique 🦖 {user}, amende maintenue !",
+    "Les Managarmr glacent ton espoir ❄️ Contestation rejetée. Reste zen !",
+    "Un Wyverne a lu ton message… et il rigole 🐲 Amende maintenue, {user} !",
+    "Le conseil des Ravageurs vote : NON 🐾 Belle tentative quand même !",
+    "Les spores toxiques ne pardonnent pas cette fois 🌫️ Amende confirmée.",
+    "Le Reaper King juge : COUPABLE 👑 {user}, l'amende reste en place.",
 ]
 PING_RESPONSES = [
     "👀 Présent ! Le gardien du pot surveille… Les diamants sont en sécurité 💎",
@@ -100,6 +131,16 @@ PING_RESPONSES = [
     "🌙 Actif 24/7 comme les spores d'Aberration ! Le pot ne fait jamais de pause 💪",
     "🏕️ Ici, présent et opérationnel ! Le campement reste friendly sous ma garde 🛡️",
     "🦎 Plus rapide qu'un basilic ! Je détecte tout en temps réel 👀💨",
+    "🦅 Le Griffin m'a signalé ! Je veille depuis les cieux du serveur ☁️",
+    "🤖 TEK-système activé ! Surveillance linguistique en cours… Tout est nominal ✅",
+    "🐋 Aussi patient qu'un Basilosaurus ! Je reste en ligne pour protéger l'ambiance 🌊",
+    "🦖 Le Yutyrannus m'a donné l'ordre de patrouiller ! Campement sous contrôle 💪",
+    "⚖️ Gardien de l'équilibre verbal ! Le pot est prêt, le vocabulaire reste sain 🌿",
+    "🔴 L'Obélisque rouge me transmet les données ! Tout fonctionne parfaitement 📊",
+    "🐾 Les Ravageurs m'ont averti de ton ping ! Toujours à l'écoute 👂",
+    "🌌 Actif comme les étoiles d'Aberration ! Le pot ne cligne jamais des yeux ✨",
+    "🐉 Les Wyvernes me tiennent informé ! Je surveille chaque syllabe 🔍",
+    "⚡ TEK-stryders en veille ! Système de détection : OPÉRATIONNEL 🤖",
 ]
 FAMILY_ROAST_RESPONSES = [
     "🦦 Ohhh, on parle de famille maintenant ? Les loutres d'ARK respectent leurs mamans… et toi ? 😏",
@@ -117,6 +158,16 @@ FAMILY_ROAST_RESPONSES = [
     "🌸 On garde les conversations zen et respectueuses ici. Les familles = zone interdite ! ✋",
     "🐉 Même les Rock Drakes ne touchent pas aux familles adverses. C'est du bas niveau ça ! 😏",
     "💡 Alerte bon sens ! Les mamans, c'est sacré partout… même sur Aberration 🌌",
+    "🦅 Un Griffin vient de lever les yeux au ciel… On respecte les familles ici ! 😅",
+    "🐋 Même le Basilosaurus paisible désapprouve… Les mamans sont sacrées ! 🌊",
+    "🦖 Le Giganotosaure grogne un avertissement : respect des familles, toujours ! 💪",
+    "🤖 Les TEK-rapaces calculent : RESPECT FAMILIAL = OBLIGATOIRE ⚖️",
+    "❄️ Les Managarmr glacent ce genre de blagues… On reste classy ! 😌",
+    "🐾 Les Ravageurs haussent les épaules… C'est limite, champion ! Reste respectueux 🛡️",
+    "🔥 Le Phœnix renaît pour te rappeler : les familles sont intouchables ! ✨",
+    "👑 La Reine des Reapers te regarde… Elle protège TOUTES les familles ! 🌌",
+    "🌿 Les herbivores de la tribu sont choqués… Respect des familles = règle de base ! 💚",
+    "⚡ L'Obélisque vert clignote un warning : famille = zone protégée ! 🚫",
 ]
 
 _last_pick = {"warn": None, "fine": None, "ok": None, "ko": None, "ping": None, "family": None}
@@ -380,11 +431,11 @@ async def contester(interaction: discord.Interaction, raison: str):
             return await interaction.response.send_message(f"{interaction.user.mention} Erreur API lors du remboursement : {e}")
         new_off = st["offenses"] - 1
         set_user_state(user_id, st["window_start"], new_off, now)
-        line = random.choice(CONTEST_ACCEPTED).format(user=interaction.user.mention, amount=last_amount, money=MONNAIE_NOM)
+        line = pick_line(CONTEST_ACCEPTED, "ok").format(user=interaction.user.mention, amount=last_amount, money=MONNAIE_NOM)
         await interaction.response.send_message(line)
     else:
         set_user_state(user_id, st["window_start"], st["offenses"], now)
-        line = random.choice(CONTEST_DENIED).format(user=interaction.user.mention)
+        line = pick_line(CONTEST_DENIED, "ko").format(user=interaction.user.mention)
         await interaction.response.send_message(line)
 
 # ---------- EVENTS ----------
@@ -454,7 +505,7 @@ async def on_message(message: discord.Message):
             await message.channel.send(f"⚠️ Impossible d'appliquer l'amende (API) : {e}")
             return
         
-        line = f"{message.author.mention} " + random.choice(FINE_LINES).format(user="", amount=fine, money=MONNAIE_NOM)
+        line = f"{message.author.mention} " + pick_line(FINE_LINES, "fine").format(user="", amount=fine, money=MONNAIE_NOM)
         
         can_contest = not (st and st["contest_used_at"] and now - st["contest_used_at"] < 24*3600)
         if can_contest:
