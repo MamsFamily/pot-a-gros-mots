@@ -351,12 +351,9 @@ async def jar_word_test(interaction: discord.Interaction, texte: str):
 @app_commands.checks.has_permissions(manage_guild=True)
 async def jar_reset(interaction: discord.Interaction, joueur: discord.User):
     user_id = joueur.id
-    conn = sqlite3.connect("jar.db")
-    c = conn.cursor()
-    c.execute("DELETE FROM user_state WHERE user_id = ?", (user_id,))
+    cur.execute("DELETE FROM user_window WHERE user_id = ?", (user_id,))
     conn.commit()
-    deleted = c.rowcount
-    conn.close()
+    deleted = cur.rowcount
     if deleted > 0:
         await interaction.response.send_message(f"🔄 Compteur réinitialisé pour {joueur.mention} ! Prochain gros mot = 50 {MONNAIE_NOM}.")
     else:
