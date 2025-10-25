@@ -4,6 +4,8 @@ Bot "pot à gros mots" bon enfant : avertissement, amendes progressives (100 →
 intégration UnbelievaBoat (débit joueur + crédit de la jarre), contestation 1×/24h, salons ignorés,
 liste FR de gros mots **extensible en live** via commandes slash.
 
+**Nouvelle fonctionnalité** : Mentionnez le bot (@BotName) pour vérifier qu'il est en ligne et surveille !
+
 ## Déploiement (Replit)
 1. Créer un Repl Python et importer ce dossier.
 2. Installer les deps : `pip install -r requirements.txt`
@@ -11,10 +13,17 @@ liste FR de gros mots **extensible en live** via commandes slash.
 4. Run `bot.py`. Attendre la synchro des slash commands.
 5. Inviter le bot (intents activés : Message Content, etc.).
 
-## Commandes (admin = Manage Server requis)
+## Fonctionnalités
+
+### Réponse au ping
+Mentionnez le bot avec `@BotName` et il répondra avec une phrase aléatoire pour signaler qu'il est actif et surveille (20 variantes thématiques ARK).
+
+### Commandes slash (admin = Manage Server requis)
 - `/jar_ignore_add #salon` — ignorer un salon
 - `/jar_ignore_remove #salon` — retirer de la liste d'ignore
 - `/jar_ignore_list` — afficher la liste
+
+### Contestation (tous les utilisateurs)
 - `/contester raison:` — contestation (1×/24h pour chaque joueur)
 
 ### Gestion dynamique de la liste de mots (regex)

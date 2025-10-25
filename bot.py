@@ -79,8 +79,30 @@ CONTEST_DENIED = [
     "Les ancêtres chuchotent : 'Non, pas cette fois…' 🌌 Amende maintenue !",
     "Le bulbdog a levé un sourcil 👀 → contestation refusée. Essaie avec un câlin la prochaine fois 💙",
 ]
+PING_RESPONSES = [
+    "👀 Présent ! Le gardien du pot surveille… Les diamants sont en sécurité 💎",
+    "🦦 Les loutres m'ont prévenu ! Je veille, toujours. Le vocabulaire reste propre ici ✨",
+    "🌿 Campement Arki'Family sous surveillance ! Tout est calme… pour l'instant 😌",
+    "🐉 Actif comme un Rock Drake la nuit ! Le bocal ne dort jamais 👁️",
+    "💎 En ligne et à l'écoute ! Les gros mots ne passeront pas inaperçus 🤫",
+    "🐤 Même le dodo m'a vu te ping ! Je surveille les ondes du serveur ✨",
+    "🌫️ Les spores murmurent… le gardien est là ! Le pot veille sur les conversations 👀",
+    "⚡ Opérationnel ! Rockwell m'a donné l'ordre de surveiller ce campement 🛡️",
+    "🦖 Éveillé comme un spino affamé ! Le vocabulaire reste sous contrôle 😎",
+    "💡 Connecté ! Le bulbdog brille, le pot fonctionne, les amendes sont prêtes… 💎",
+    "🌸 Zen mais vigilant ! Les Reapers m'ont appris à tout entendre 👂",
+    "✨ Toujours présent pour la tribu ! Le gardien des mots veille sur vous 🤗",
+    "🔥 En mode surveillance ! L'Obélisque m'envoie toutes les notifs 📡",
+    "🦦 Les loutres ont signalé ton ping ! Tout va bien au campement ? 😊",
+    "💎 Bot actif, pot réactif ! Le vocabulaire cosy, c'est mon dada 🌿",
+    "🐶 Bulbdog en alerte ! Je scanne chaque message pour garder l'ambiance familiale ✨",
+    "⚔️ Gardien du lexique en faction ! Les Nameless ne passeront pas… ni les gros mots 😤",
+    "🌙 Actif 24/7 comme les spores d'Aberration ! Le pot ne fait jamais de pause 💪",
+    "🏕️ Ici, présent et opérationnel ! Le campement reste friendly sous ma garde 🛡️",
+    "🦎 Plus rapide qu'un basilic ! Je détecte tout en temps réel 👀💨",
+]
 
-_last_pick = {"warn": None, "fine": None, "ok": None, "ko": None}
+_last_pick = {"warn": None, "fine": None, "ok": None, "ko": None, "ping": None}
 def pick_line(pool, key):
     if not pool: return ""
     if len(pool) == 1: return pool[0]
@@ -348,9 +370,16 @@ async def on_message(message: discord.Message):
         return
     if message.guild.id != GUILD_ID:
         return
+    
+    content = message.content or ""
+    
+    if bot.user in message.mentions:
+        line = pick_line(PING_RESPONSES, "ping")
+        await message.channel.send(line)
+        return
+    
     if channel_ignored(message.channel.id):
         return
-    content = message.content or ""
     if not content or not GROS_MOTS_RE:
         return
 

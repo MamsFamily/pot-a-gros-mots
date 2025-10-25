@@ -10,6 +10,7 @@ Bot Discord français pour serveur de gaming Arki'Family qui détecte automatiqu
 - ✅ Système de contestation (1 fois par 24h)
 - ✅ Gestion dynamique de la liste de mots via commandes slash
 - ✅ Salons ignorés configurables
+- ✅ Réponse au ping avec 20 phrases thématiques ARK
 - ✅ Base de données SQLite pour la persistance
 - ✅ Keep-alive Flask pour Replit
 
@@ -40,24 +41,30 @@ Bot Discord français pour serveur de gaming Arki'Family qui détecte automatiqu
 
 ## Fonctionnalités principales
 
-### 1. Détection automatique
+### 1. Réponse au ping
+- Mentionnez le bot avec `@BotName` dans n'importe quel salon
+- Le bot répond avec une phrase aléatoire parmi 20 variantes thématiques ARK
+- Confirme qu'il est en ligne et surveille activement
+- Système anti-répétition (pas la même phrase deux fois de suite)
+
+### 2. Détection automatique
 - Scan de tous les messages du serveur
 - Détection via regex (liste extensible)
 - Premier gros mot = avertissement ludique
 - Gros mots suivants = amendes progressives
 
-### 2. Système d'amendes
+### 3. Système d'amendes
 - **Fenêtre de 24h** : Les infractions s'accumulent sur 24h
 - **Progression** : 100 → 200 → 300 → 400 diamants...
 - **Débit automatique** via UnbelievaBoat
 - **Crédit du pot** : Les amendes vont au compte-jarre
 
-### 3. Contestation
+### 4. Contestation
 - 1 contestation par joueur toutes les 24h
 - Acceptation automatique si raison valable (contexte, citation, etc.)
 - Remboursement depuis le pot vers le joueur
 
-### 4. Commandes slash (Admin)
+### 5. Commandes slash (Admin)
 
 **Gestion des salons ignorés :**
 - `/jar_ignore_add #salon` - Ignorer un salon
@@ -149,12 +156,13 @@ La liste peut être modifiée :
 ## Punchlines
 
 Le bot utilise des messages aléatoires thématiques ARK pour :
+- **Ping/Mention** (20 variantes) : Quand le bot est mentionné
 - **Avertissements** (15 variantes) : Premier gros mot
 - **Amendes** (18 variantes) : Gros mots suivants
 - **Contestation acceptée** (7 variantes)
 - **Contestation refusée** (7 variantes)
 
-Système anti-répétition pour éviter le même message deux fois de suite.
+Système anti-répétition pour éviter le même message deux fois de suite dans chaque catégorie.
 
 ## Sécurité
 
@@ -216,6 +224,7 @@ Pour toute question ou problème :
 - Installation de Python 3.11 et dépendances
 - Création de la structure de fichiers
 - Configuration du workflow
+- Ajout de la fonctionnalité de réponse au ping (20 phrases thématiques)
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)
