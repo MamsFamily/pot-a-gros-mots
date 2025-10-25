@@ -1,9 +1,3 @@
-# Liste FR large (regex). Lignes vides et préfixées # sont ignorées.
-# Conseils :
-# - Préférez des \b bornes de mots quand c'est pertinent pour limiter les faux positifs.
-# - Ajoutez des variantes avec accents, pluriels, et "leet" simple.
-# - Testez avec /jar_word_test avant validation en prod.
-
 \bmerde(s)?\b
 \bpu(te|t[eé]e)s?\b
 \bput[ae]in(s)?\b
@@ -117,7 +111,6 @@ p\W*?t[ua]in
 \besquimau(x)?\b
 \besquimaude?\b
 \besclave(s)?\b
-# variantes accent/leet supplémentaires
 b[a@]t[a@]rd
 s[a@]l[o0]p[e3]
 c[o0]nn[a@]rd
@@ -127,4 +120,4 @@ fdp
 tg
 ntm
 pd
-# Fin de liste
+je t’emmerde
