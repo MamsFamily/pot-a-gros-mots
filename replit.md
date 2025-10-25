@@ -239,6 +239,7 @@ Pour toute question ou problème :
 - Ajout d'un rappel automatique pour contester l'amende (quand encore possible)
 - Ajout d'un cooldown de 60 secondes sur les réponses "famille" pour éviter le spam
 - Ajout d'un système de déduplication des messages pour garantir une seule réponse par message
+- Ping systématique du joueur au début du message d'amende pour notification garantie
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)

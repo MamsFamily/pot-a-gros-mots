@@ -453,7 +453,8 @@ async def on_message(message: discord.Message):
         except Exception as e:
             await message.channel.send(f"⚠️ Impossible d'appliquer l'amende (API) : {e}")
             return
-        line = random.choice(FINE_LINES).format(user=message.author.mention, amount=fine, money=MONNAIE_NOM)
+        
+        line = f"{message.author.mention} " + random.choice(FINE_LINES).format(user="", amount=fine, money=MONNAIE_NOM)
         
         can_contest = not (st and st["contest_used_at"] and now - st["contest_used_at"] < 24*3600)
         if can_contest:
