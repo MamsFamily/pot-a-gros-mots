@@ -142,35 +142,67 @@ PING_RESPONSES = [
     "🐉 Les Wyvernes me tiennent informé ! Je surveille chaque syllabe 🔍",
     "⚡ TEK-stryders en veille ! Système de détection : OPÉRATIONNEL 🤖",
 ]
-FAMILY_ROAST_RESPONSES = [
-    "🦦 Ohhh, on parle de famille maintenant ? Les loutres d'ARK respectent leurs mamans… et toi ? 😏",
-    "🐤 Les dodos ont plus de classe que ça ! On garde nos grands-mères en dehors des joutes verbales 💙",
+MOTHER_RESPONSES = [
+    "🦦 Ohhh, on parle de maman maintenant ? Les loutres d'ARK respectent leurs mamans… et toi ? 😏",
     "🌿 Dans la tribu Arki'Family, on respecte les mamans ! Même les Gigas ont appris ça 🦖",
     "✨ Ta mère ? Sérieux ? Même Rockwell n'oserait pas. Reste respectueux, survivaliste ! 🛡️",
-    "🦎 Les basilics sifflent de déception… On ne vise pas les familles dans notre campement 😌",
-    "💎 Respecte les mères, les grand-mères et les sœurs ! C'est la règle d'or de l'ARK 🌟",
-    "🐶 Le bulbdog secoue la tête… Les familles, c'est sacré. Trouve un autre angle d'attaque ! 😅",
     "🌫️ Les spores murmurent : 'Les mamans sont intouchables…' Même en plaisantant 🤫",
-    "🦖 Un Rex respecte sa progéniture et ses ancêtres. Sois à la hauteur de ton dino préféré ! 💪",
-    "⚡ L'Obélisque vient de clignoter en rouge… Règle #1 de l'ARK : respect des familles 🚨",
-    "🏕️ Dans ce campement, les mères, grands-mères et sœurs sont protégées ! Trouve autre chose 😉",
+    "⚡ L'Obélisque vient de clignoter en rouge… Règle #1 de l'ARK : respect des mamans 🚨",
     "🦦 Les loutres te jugent sévèrement… Elles adorent leurs mamans ! Sois sympa comme elles 💙",
-    "🌸 On garde les conversations zen et respectueuses ici. Les familles = zone interdite ! ✋",
-    "🐉 Même les Rock Drakes ne touchent pas aux familles adverses. C'est du bas niveau ça ! 😏",
     "💡 Alerte bon sens ! Les mamans, c'est sacré partout… même sur Aberration 🌌",
-    "🦅 Un Griffin vient de lever les yeux au ciel… On respecte les familles ici ! 😅",
     "🐋 Même le Basilosaurus paisible désapprouve… Les mamans sont sacrées ! 🌊",
-    "🦖 Le Giganotosaure grogne un avertissement : respect des familles, toujours ! 💪",
+    "🦖 Le Giganotosaure grogne un avertissement : respect des mères, toujours ! 💪",
+    "🐾 Les Ravageurs haussent les épaules… Ta mère mérite mieux ! Reste respectueux 🛡️",
+    "👑 La Reine des Reapers te regarde… Elle protège TOUTES les mamans ! 🌌",
+    "🐤 Les dodos trouvent ça limite… Les mamans, c'est sacré même pour un dodo ! 💙",
+    "🦎 Les basilics sifflent : 'Respecte ta maman, survivaliste !' 😌",
+    "🐶 Le bulbdog secoue la tête… Ta mère mérite mieux que ça ! 😅",
+]
+GRANDMOTHER_RESPONSES = [
+    "🐤 Les dodos ont plus de classe que ça ! On garde nos grands-mères en dehors des joutes verbales 💙",
+    "💎 Respecte ta grand-mère ! C'est la règle d'or de l'ARK 🌟",
+    "🦖 Un Rex respecte ses ancêtres. Sois à la hauteur et respecte ta grand-mère ! 💪",
+    "🏕️ Dans ce campement, les grands-mères sont protégées ! Trouve autre chose 😉",
+    "🐉 Même les Rock Drakes respectent leurs ancêtres. C'est du bas niveau ça ! 😏",
+    "🦅 Un Griffin vient de lever les yeux au ciel… On respecte les grands-mères ici ! 😅",
+    "🤖 Les TEK-rapaces calculent : RESPECT DES AÎNÉES = OBLIGATOIRE ⚖️",
+    "❄️ Les Managarmr glacent ce genre de blagues sur les grands-mères… On reste classy ! 😌",
+    "🔥 Le Phœnix renaît pour te rappeler : les grands-mères sont intouchables ! ✨",
+    "🌿 Les herbivores de la tribu sont choqués… Respect des ancêtres = règle de base ! 💚",
+    "⚡ L'Obélisque vert clignote un warning : grand-mère = zone protégée ! 🚫",
+    "🦦 Les loutres respectent leurs aînées… Fais pareil avec ta grand-mère ! 💙",
+    "🌫️ Les spores ancestrales murmurent : 'Les grands-mères sont sacrées…' 🤫",
+]
+SISTER_RESPONSES = [
+    "🦎 Les basilics sifflent de déception… On ne vise pas les sœurs dans notre campement 😌",
+    "💎 Respecte ta sœur ! C'est la règle d'or de l'ARK 🌟",
+    "🐶 Le bulbdog secoue la tête… Les sœurs, c'est sacré. Trouve un autre angle d'attaque ! 😅",
+    "🏕️ Dans ce campement, les sœurs sont protégées ! Trouve autre chose 😉",
+    "🌸 On garde les conversations zen et respectueuses ici. Les sœurs = zone interdite ! ✋",
+    "🐉 Même les Rock Drakes ne touchent pas aux sœurs adverses. C'est du bas niveau ça ! 😏",
+    "🦖 Le Giganotosaure grogne un avertissement : respect des sœurs, toujours ! 💪",
+    "🤖 Les TEK-rapaces calculent : RESPECT FRATERNEL = OBLIGATOIRE ⚖️",
+    "❄️ Les Managarmr glacent ce genre de blagues sur les sœurs… On reste classy ! 😌",
+    "🐾 Les Ravageurs haussent les épaules… Ta sœur mérite mieux ! Reste respectueux 🛡️",
+    "🔥 Le Phœnix renaît pour te rappeler : les sœurs sont intouchables ! ✨",
+    "👑 La Reine des Reapers te regarde… Elle protège TOUTES les sœurs ! 🌌",
+    "🦦 Les loutres respectent leurs sœurs… Fais pareil ! 💙",
+    "⚡ L'Obélisque rouge clignote : respect de ta sœur = obligatoire ! 🚨",
+]
+FAMILY_GENERAL_RESPONSES = [
+    "💎 Respecte les mères, les grand-mères et les sœurs ! C'est la règle d'or de l'ARK 🌟",
+    "🦎 Les basilics sifflent de déception… On ne vise pas les familles dans notre campement 😌",
+    "🐶 Le bulbdog secoue la tête… Les familles, c'est sacré. Trouve un autre angle d'attaque ! 😅",
+    "⚡ L'Obélisque vient de clignoter en rouge… Règle #1 de l'ARK : respect des familles 🚨",
+    "🏕️ Dans ce campement, les familles sont protégées ! Trouve autre chose 😉",
+    "🌸 On garde les conversations zen et respectueuses ici. Les familles = zone interdite ! ✋",
     "🤖 Les TEK-rapaces calculent : RESPECT FAMILIAL = OBLIGATOIRE ⚖️",
-    "❄️ Les Managarmr glacent ce genre de blagues… On reste classy ! 😌",
+    "🦅 Un Griffin vient de lever les yeux au ciel… On respecte les familles ici ! 😅",
     "🐾 Les Ravageurs haussent les épaules… C'est limite, champion ! Reste respectueux 🛡️",
     "🔥 Le Phœnix renaît pour te rappeler : les familles sont intouchables ! ✨",
-    "👑 La Reine des Reapers te regarde… Elle protège TOUTES les familles ! 🌌",
-    "🌿 Les herbivores de la tribu sont choqués… Respect des familles = règle de base ! 💚",
-    "⚡ L'Obélisque vert clignote un warning : famille = zone protégée ! 🚫",
 ]
 
-_last_pick = {"warn": None, "fine": None, "ok": None, "ko": None, "ping": None, "family": None}
+_last_pick = {"warn": None, "fine": None, "ok": None, "ko": None, "ping": None, "family": None, "mother": None, "grandmother": None, "sister": None}
 _last_family_response_time = 0
 _processed_messages = set()
 
@@ -473,13 +505,30 @@ async def on_message(message: discord.Message):
     if not content:
         return
     
-    family_pattern = re.compile(r'\b(ta\s+(m[eè]re|grand[\s\-]?m[eè]re|s[oœ]eur|daronne|reume))\b', re.IGNORECASE)
-    if family_pattern.search(content):
-        global _last_family_response_time
+    grandmother_pattern = re.compile(r'\b(ta\s+grand[\s\-]?m[eè]re)\b', re.IGNORECASE)
+    mother_pattern = re.compile(r'\b(ta\s+(m[eè]re|daronne|reume))\b', re.IGNORECASE)
+    sister_pattern = re.compile(r'\b(ta\s+s[oœ]eur)\b', re.IGNORECASE)
+    
+    global _last_family_response_time
+    if grandmother_pattern.search(content):
         now = now_ts()
         if now - _last_family_response_time >= 60:
             _last_family_response_time = now
-            line = pick_line(FAMILY_ROAST_RESPONSES, "family")
+            line = pick_line(GRANDMOTHER_RESPONSES, "grandmother")
+            await message.channel.send(line)
+        return
+    elif mother_pattern.search(content):
+        now = now_ts()
+        if now - _last_family_response_time >= 60:
+            _last_family_response_time = now
+            line = pick_line(MOTHER_RESPONSES, "mother")
+            await message.channel.send(line)
+        return
+    elif sister_pattern.search(content):
+        now = now_ts()
+        if now - _last_family_response_time >= 60:
+            _last_family_response_time = now
+            line = pick_line(SISTER_RESPONSES, "sister")
             await message.channel.send(line)
         return
     
