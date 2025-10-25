@@ -11,6 +11,7 @@ Bot Discord français pour serveur de gaming Arki'Family qui détecte automatiqu
 - ✅ Gestion dynamique de la liste de mots via commandes slash
 - ✅ Salons ignorés configurables
 - ✅ Réponse au ping avec 20 phrases thématiques ARK
+- ✅ Détection "ta mère/grand-mère/sœur" avec réponse humoristique (sans amende)
 - ✅ Base de données SQLite pour la persistance
 - ✅ Keep-alive Flask pour Replit
 
@@ -47,24 +48,30 @@ Bot Discord français pour serveur de gaming Arki'Family qui détecte automatiqu
 - Confirme qu'il est en ligne et surveille activement
 - Système anti-répétition (pas la même phrase deux fois de suite)
 
-### 2. Détection automatique
+### 2. Rappel de respect familial
+- Détecte automatiquement "ta mère", "ta grand-mère", "ta sœur" (et variantes)
+- Répond avec humour (15 phrases thématiques ARK)
+- **Aucune amende** appliquée, juste un rappel bon enfant
+- Fonctionne dans tous les salons (même non ignorés)
+
+### 3. Détection automatique
 - Scan de tous les messages du serveur
 - Détection via regex (liste extensible)
 - Premier gros mot = avertissement ludique
 - Gros mots suivants = amendes progressives
 
-### 3. Système d'amendes
+### 4. Système d'amendes
 - **Fenêtre de 24h** : Les infractions s'accumulent sur 24h
 - **Progression** : 100 → 200 → 300 → 400 diamants...
 - **Débit automatique** via UnbelievaBoat
 - **Crédit du pot** : Les amendes vont au compte-jarre
 
-### 4. Contestation
+### 5. Contestation
 - 1 contestation par joueur toutes les 24h
 - Acceptation automatique si raison valable (contexte, citation, etc.)
 - Remboursement depuis le pot vers le joueur
 
-### 5. Commandes slash (Admin)
+### 6. Commandes slash (Admin)
 
 **Gestion des salons ignorés :**
 - `/jar_ignore_add #salon` - Ignorer un salon
@@ -157,6 +164,7 @@ La liste peut être modifiée :
 
 Le bot utilise des messages aléatoires thématiques ARK pour :
 - **Ping/Mention** (20 variantes) : Quand le bot est mentionné
+- **Rappel familial** (15 variantes) : Détection "ta mère", "ta grand-mère", "ta sœur"
 - **Avertissements** (15 variantes) : Premier gros mot
 - **Amendes** (18 variantes) : Gros mots suivants
 - **Contestation acceptée** (7 variantes)
@@ -225,6 +233,7 @@ Pour toute question ou problème :
 - Création de la structure de fichiers
 - Configuration du workflow
 - Ajout de la fonctionnalité de réponse au ping (20 phrases thématiques)
+- Ajout de la détection "ta mère/grand-mère/sœur" avec réponses humoristiques (15 variantes)
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)

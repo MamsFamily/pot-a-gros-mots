@@ -101,8 +101,25 @@ PING_RESPONSES = [
     "🏕️ Ici, présent et opérationnel ! Le campement reste friendly sous ma garde 🛡️",
     "🦎 Plus rapide qu'un basilic ! Je détecte tout en temps réel 👀💨",
 ]
+FAMILY_ROAST_RESPONSES = [
+    "🦦 Ohhh, on parle de famille maintenant ? Les loutres d'ARK respectent leurs mamans… et toi ? 😏",
+    "🐤 Les dodos ont plus de classe que ça ! On garde nos grands-mères en dehors des joutes verbales 💙",
+    "🌿 Dans la tribu Arki'Family, on respecte les mamans ! Même les Gigas ont appris ça 🦖",
+    "✨ Ta mère ? Sérieux ? Même Rockwell n'oserait pas. Reste respectueux, survivaliste ! 🛡️",
+    "🦎 Les basilics sifflent de déception… On ne vise pas les familles dans notre campement 😌",
+    "💎 Respecte les mères, les grand-mères et les sœurs ! C'est la règle d'or de l'ARK 🌟",
+    "🐶 Le bulbdog secoue la tête… Les familles, c'est sacré. Trouve un autre angle d'attaque ! 😅",
+    "🌫️ Les spores murmurent : 'Les mamans sont intouchables…' Même en plaisantant 🤫",
+    "🦖 Un Rex respecte sa progéniture et ses ancêtres. Sois à la hauteur de ton dino préféré ! 💪",
+    "⚡ L'Obélisque vient de clignoter en rouge… Règle #1 de l'ARK : respect des familles 🚨",
+    "🏕️ Dans ce campement, les mères, grands-mères et sœurs sont protégées ! Trouve autre chose 😉",
+    "🦦 Les loutres te jugent sévèrement… Elles adorent leurs mamans ! Sois sympa comme elles 💙",
+    "🌸 On garde les conversations zen et respectueuses ici. Les familles = zone interdite ! ✋",
+    "🐉 Même les Rock Drakes ne touchent pas aux familles adverses. C'est du bas niveau ça ! 😏",
+    "💡 Alerte bon sens ! Les mamans, c'est sacré partout… même sur Aberration 🌌",
+]
 
-_last_pick = {"warn": None, "fine": None, "ok": None, "ko": None, "ping": None}
+_last_pick = {"warn": None, "fine": None, "ok": None, "ko": None, "ping": None, "family": None}
 def pick_line(pool, key):
     if not pool: return ""
     if len(pool) == 1: return pool[0]
@@ -380,7 +397,16 @@ async def on_message(message: discord.Message):
     
     if channel_ignored(message.channel.id):
         return
-    if not content or not GROS_MOTS_RE:
+    if not content:
+        return
+    
+    family_pattern = re.compile(r'\b(ta\s+(m[eè]re|grand[\s\-]?m[eè]re|s[oœ]eur|daronne|reume))\b', re.IGNORECASE)
+    if family_pattern.search(content):
+        line = pick_line(FAMILY_ROAST_RESPONSES, "family")
+        await message.channel.send(line)
+        return
+    
+    if not GROS_MOTS_RE:
         return
 
     if GROS_MOTS_RE.search(content):
