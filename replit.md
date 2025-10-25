@@ -238,7 +238,7 @@ Pour toute question ou problème :
 - Modification du système d'amendes : suppression de l'avertissement gratuit, amendes dès la 1ère infraction (50 → 100 → 150...)
 - Ajout de la commande admin `/jar_reset joueur:` pour réinitialiser le compteur d'un joueur spécifique
 - Ajout d'un rappel automatique pour contester l'amende (quand encore possible)
-- Ajout d'un cooldown de 60 secondes sur les réponses "famille" pour éviter le spam
+- Ajout d'un cooldown de 10 secondes sur les réponses "famille" pour éviter le spam
 - Ajout d'un système de déduplication des messages pour garantir une seule réponse par message
 - Ping systématique du joueur au début du message d'amende pour notification garantie
 - Résultats de contestation rendus publics (visible de tous au lieu de privé)

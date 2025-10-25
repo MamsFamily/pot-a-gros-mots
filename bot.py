@@ -512,21 +512,21 @@ async def on_message(message: discord.Message):
     global _last_family_response_time
     if grandmother_pattern.search(content):
         now = now_ts()
-        if now - _last_family_response_time >= 60:
+        if now - _last_family_response_time >= 10:
             _last_family_response_time = now
             line = pick_line(GRANDMOTHER_RESPONSES, "grandmother")
             await message.channel.send(line)
         return
     elif mother_pattern.search(content):
         now = now_ts()
-        if now - _last_family_response_time >= 60:
+        if now - _last_family_response_time >= 10:
             _last_family_response_time = now
             line = pick_line(MOTHER_RESPONSES, "mother")
             await message.channel.send(line)
         return
     elif sister_pattern.search(content):
         now = now_ts()
-        if now - _last_family_response_time >= 60:
+        if now - _last_family_response_time >= 10:
             _last_family_response_time = now
             line = pick_line(SISTER_RESPONSES, "sister")
             await message.channel.send(line)
