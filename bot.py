@@ -327,22 +327,22 @@ def looks_like_context(msg: str, reason: str) -> bool:
     return any(k in text for k in keys) or ("*" in msg)
 
 # ---------- COMMANDES IGNORED CHANNELS ----------
-@tree.command(description="Ajouter un salon à la liste ignorée (exempt de détection)")
+@tree.command(name="pot_ignorer_ajouter", description="Ajouter un salon à la liste ignorée (exempt de détection)")
 @app_commands.checks.has_permissions(manage_guild=True)
-async def jar_ignore_add(interaction: discord.Interaction, channel: discord.TextChannel):
+async def pot_ignorer_ajouter(interaction: discord.Interaction, channel: discord.TextChannel):
     cur.execute("REPLACE INTO ignored_channels (channel_id) VALUES (?)", (channel.id,))
     conn.commit()
     await interaction.response.send_message(f"✅ {channel.mention} sera ignoré.")
 
-@tree.command(description="Retirer un salon de la liste ignorée")
+@tree.command(name="pot_ignorer_retirer", description="Retirer un salon de la liste ignorée")
 @app_commands.checks.has_permissions(manage_guild=True)
-async def jar_ignore_remove(interaction: discord.Interaction, channel: discord.TextChannel):
+async def pot_ignorer_retirer(interaction: discord.Interaction, channel: discord.TextChannel):
     cur.execute("DELETE FROM ignored_channels WHERE channel_id=?", (channel.id,))
     conn.commit()
     await interaction.response.send_message(f"✅ {channel.mention} est à nouveau surveillé.")
 
-@tree.command(description="Lister les salons ignorés")
-async def jar_ignore_list(interaction: discord.Interaction):
+@tree.command(name="pot_ignorer_liste", description="Lister les salons ignorés")
+async def pot_ignorer_liste(interaction: discord.Interaction):
     cur.execute("SELECT channel_id FROM ignored_channels")
     rows = cur.fetchall()
     if not rows:
@@ -360,9 +360,9 @@ def ensure_compiled(interaction: discord.Interaction):
         return False
     return True
 
-@tree.command(description="Ajouter un motif (regex) à la liste de gros mots")
+@tree.command(name="pot_mot_ajouter", description="Ajouter un motif (regex) à la liste de gros mots")
 @app_commands.checks.has_permissions(manage_guild=True)
-async def jar_word_add(interaction: discord.Interaction, motif: str):
+async def pot_mot_ajouter(interaction: discord.Interaction, motif: str):
     global WORD_PATTERNS, GROS_MOTS_RE
     motif = motif.strip()
     if not motif:
@@ -378,9 +378,9 @@ async def jar_word_add(interaction: discord.Interaction, motif: str):
     GROS_MOTS_RE = compile_patterns(WORD_PATTERNS)
     await interaction.response.send_message(f"✅ Motif ajouté et rechargé : `{motif}`")
 
-@tree.command(description="Supprimer un motif existant (match exact de la ligne)")
+@tree.command(name="pot_mot_retirer", description="Supprimer un motif existant (match exact de la ligne)")
 @app_commands.checks.has_permissions(manage_guild=True)
-async def jar_word_remove(interaction: discord.Interaction, motif: str):
+async def pot_mot_retirer(interaction: discord.Interaction, motif: str):
     global WORD_PATTERNS, GROS_MOTS_RE
     motif = motif.strip()
     if motif not in WORD_PATTERNS:
@@ -390,9 +390,9 @@ async def jar_word_remove(interaction: discord.Interaction, motif: str):
     GROS_MOTS_RE = compile_patterns(WORD_PATTERNS) if WORD_PATTERNS else None
     await interaction.response.send_message(f"🗑️ Motif supprimé et liste rechargée : `{motif}`")
 
-@tree.command(description="Lister les motifs (paginé)")
+@tree.command(name="pot_mot_liste", description="Lister les motifs (paginé)")
 @app_commands.checks.has_permissions(manage_guild=True)
-async def jar_word_list(interaction: discord.Interaction, page: int = 1, page_size: int = 20):
+async def pot_mot_liste(interaction: discord.Interaction, page: int = 1, page_size: int = 20):
     if page < 1: page = 1
     start = (page - 1) * page_size
     end = start + page_size
@@ -403,17 +403,17 @@ async def jar_word_list(interaction: discord.Interaction, page: int = 1, page_si
     body = "\n".join(f"{i+1}. `{p}`" for i,p in enumerate(chunk, start=start))
     await interaction.response.send_message(f"**Motifs (page {page})**\n{body}\n\nTotal: {total}")
 
-@tree.command(description="Recharger la wordlist depuis le fichier")
+@tree.command(name="pot_mot_recharger", description="Recharger la wordlist depuis le fichier")
 @app_commands.checks.has_permissions(manage_guild=True)
-async def jar_word_reload(interaction: discord.Interaction):
+async def pot_mot_recharger(interaction: discord.Interaction):
     global WORD_PATTERNS, GROS_MOTS_RE
     WORD_PATTERNS = load_wordlist(WORDLIST_PATH)
     GROS_MOTS_RE = compile_patterns(WORD_PATTERNS)
     await interaction.response.send_message(f"🔁 Wordlist rechargée ({len(WORD_PATTERNS)} motifs).")
 
-@tree.command(description="Tester un texte contre la wordlist (affiche les motifs correspondants)")
+@tree.command(name="pot_mot_tester", description="Tester un texte contre la wordlist (affiche les motifs correspondants)")
 @app_commands.checks.has_permissions(manage_guild=True)
-async def jar_word_test(interaction: discord.Interaction, texte: str):
+async def pot_mot_tester(interaction: discord.Interaction, texte: str):
     if not GROS_MOTS_RE:
         return await interaction.response.send_message("La wordlist est vide ou invalide.", ephemeral=True)
     matches = []
@@ -430,9 +430,9 @@ async def jar_word_test(interaction: discord.Interaction, texte: str):
     extra = "" if len(matches) <= 30 else f"\n… et {len(matches)-30} de plus."
     await interaction.response.send_message(f"⚠️ Motifs détectés ({len(matches)}) :\n{preview}{extra}")
 
-@tree.command(description="Réinitialiser le compteur d'infractions d'un joueur (Admin)")
+@tree.command(name="pot_reinitialiser", description="Réinitialiser le compteur d'infractions d'un joueur (Admin)")
 @app_commands.checks.has_permissions(manage_guild=True)
-async def jar_reset(interaction: discord.Interaction, joueur: discord.User):
+async def pot_reinitialiser(interaction: discord.Interaction, joueur: discord.User):
     user_id = joueur.id
     cur.execute("DELETE FROM user_window WHERE user_id = ?", (user_id,))
     conn.commit()

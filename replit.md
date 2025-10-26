@@ -245,6 +245,7 @@ Pour toute question ou problème :
 - **Enrichissement massif des phrases** : 33 amendes, 15 acceptations, 15 refus, 30 pings, 41 réponses famille
 - **Amélioration de la rotation** : système anti-répétition pour toutes les catégories de phrases
 - **Réponses famille contextuelles** : le bot répond avec des phrases cohérentes selon le membre mentionné (mère/grand-mère/sœur)
+- **Traduction complète en français** : toutes les commandes slash ont été traduites (pot_mot_ajouter, pot_ignorer_liste, etc.)
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)
