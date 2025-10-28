@@ -31,6 +31,9 @@ env/
 *.sqlite3
 *.db
 
+# Railway
+.railway
+
 # IDE
 .vscode/
 .idea/

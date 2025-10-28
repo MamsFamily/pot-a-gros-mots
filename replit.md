@@ -246,6 +246,7 @@ Pour toute question ou problème :
 - **Amélioration de la rotation** : système anti-répétition pour toutes les catégories de phrases
 - **Réponses famille contextuelles** : le bot répond avec des phrases cohérentes selon le membre mentionné (mère/grand-mère/sœur)
 - **Traduction complète en français** : toutes les commandes slash ont été traduites (pot_mot_ajouter, pot_ignorer_liste, etc.)
+- **Configuration Railway** : ajout de nixpacks.toml, Procfile, runtime.txt pour déploiement sur Railway (force Python 3.11)
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)
