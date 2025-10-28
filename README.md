@@ -35,16 +35,24 @@ Le bot détecte automatiquement les phrases comme **"ta mère"**, **"ta grand-m�
 
 ### Gestion dynamique de la liste de mots (regex)
 - `/pot_mot_ajouter motif:` — ajoute un **motif regex** à la liste et recharge
-- `/pot_mot_retirer motif:` — supprime un motif existant (match exact de la ligne)
+- `/pot_mot_retirer motif:` — supprime un motif existant (avec **menu de recherche intelligent** 🔍)
 - `/pot_mot_liste page:` — affiche la liste paginée
 - `/pot_mot_recharger` — recharge le fichier (utile après édition manuelle)
 - `/pot_mot_tester texte:` — teste une phrase et montre les motifs qui détectent
+
+> **Nouveau** : `/pot_mot_retirer` propose une **autocomplétion** : tapez quelques lettres et le bot vous montre jusqu'à 25 motifs correspondants !
 
 ### Gestion du système
 - `/pot_reinitialiser joueur:` — réinitialise le compteur d'infractions d'un joueur spécifique
 
 > Les motifs sont des **regex Python**. Voir `data/wordlist_fr.txt` pour des exemples.
 > Lignes vides ou commençant par `#` sont ignorées.
+> 
+> ⚠️ **Important** : Pour éviter les faux positifs (ex: "con" détecté dans "content"), utilisez les délimiteurs `\b` :
+> - ✅ Correct : `\bcon\b` (détecte uniquement "con")
+> - ❌ Incorrect : `con` (détecte "con" dans "content", "second", etc.)
+> 
+> Consultez `GUIDE_REGEX.md` pour un guide complet des expressions régulières.
 
 ## Variables utiles (.env)
 - `CURRENCY_NAME` — nom d'affichage de la monnaie (ex: diamants)

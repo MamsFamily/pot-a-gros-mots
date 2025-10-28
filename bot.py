@@ -378,8 +378,15 @@ async def pot_mot_ajouter(interaction: discord.Interaction, motif: str):
     GROS_MOTS_RE = compile_patterns(WORD_PATTERNS)
     await interaction.response.send_message(f"✅ Motif ajouté et rechargé : `{motif}`")
 
-@tree.command(name="pot_mot_retirer", description="Supprimer un motif existant (match exact de la ligne)")
+async def autocomplete_motifs(interaction: discord.Interaction, current: str) -> list[app_commands.Choice[str]]:
+    """Autocomplétion pour la liste des motifs"""
+    current_lower = current.lower()
+    matches = [p for p in WORD_PATTERNS if current_lower in p.lower()][:25]
+    return [app_commands.Choice(name=p[:100], value=p) for p in matches]
+
+@tree.command(name="pot_mot_retirer", description="Supprimer un motif existant (avec menu de recherche)")
 @app_commands.checks.has_permissions(manage_guild=True)
+@app_commands.autocomplete(motif=autocomplete_motifs)
 async def pot_mot_retirer(interaction: discord.Interaction, motif: str):
     global WORD_PATTERNS, GROS_MOTS_RE
     motif = motif.strip()

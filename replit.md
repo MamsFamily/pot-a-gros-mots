@@ -247,6 +247,8 @@ Pour toute question ou problème :
 - **Réponses famille contextuelles** : le bot répond avec des phrases cohérentes selon le membre mentionné (mère/grand-mère/sœur)
 - **Traduction complète en français** : toutes les commandes slash ont été traduites (pot_mot_ajouter, pot_ignorer_liste, etc.)
 - **Configuration Railway** : ajout de nixpacks.toml, Procfile, runtime.txt pour déploiement sur Railway (force Python 3.11)
+- **Autocomplétion intelligente** : `/pot_mot_retirer` propose maintenant un menu de recherche avec suggestions (jusqu'à 25 motifs)
+- **Guide regex** : création de GUIDE_REGEX.md pour expliquer comment éviter les faux positifs avec `\b`
 
 ### Conventions de code
 - Python avec type hints partiel (`int | None`)
