@@ -1,0 +1,113 @@
+Starting Container
+    from ..member import Member
+    import discord
+  File "/app/.venv/lib/python3.13/site-packages/discord/__init__.py", line 23, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/member.py", line 33, in <module>
+    from .client import *
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/discord/client.py", line 51, in <module>
+    import discord.abc
+  File "/app/bot.py", line 5, in <module>
+    from .sku import SKU, Entitlement
+  File "/app/.venv/lib/python3.13/site-packages/discord/abc.py", line 59, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/sku.py", line 31, in <module>
+    from .voice_client import VoiceClient, VoiceProtocol
+    from .app_commands import MissingApplicationID
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/__init__.py", line 12, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/voice_client.py", line 35, in <module>
+    from .commands import *
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/commands.py", line 53, in <module>
+    from .models import Choice
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/models.py", line 44, in <module>
+    from .player import AudioPlayer, AudioSource
+  File "/app/.venv/lib/python3.13/site-packages/discord/player.py", line 29, in <module>
+    import audioop
+ModuleNotFoundError: No module named 'audioop'
+Traceback (most recent call last):
+  File "/app/bot.py", line 5, in <module>
+    import discord
+  File "/app/.venv/lib/python3.13/site-packages/discord/__init__.py", line 23, in <module>
+    from .client import *
+  File "/app/.venv/lib/python3.13/site-packages/discord/client.py", line 51, in <module>
+    from .sku import SKU, Entitlement
+  File "/app/.venv/lib/python3.13/site-packages/discord/sku.py", line 31, in <module>
+    from .app_commands import MissingApplicationID
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/__init__.py", line 12, in <module>
+    from .commands import *
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/commands.py", line 53, in <module>
+    from .models import Choice
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/models.py", line 44, in <module>
+    from ..member import Member
+  File "/app/.venv/lib/python3.13/site-packages/discord/member.py", line 33, in <module>
+    import discord.abc
+  File "/app/.venv/lib/python3.13/site-packages/discord/abc.py", line 59, in <module>
+    from .voice_client import VoiceClient, VoiceProtocol
+  File "/app/.venv/lib/python3.13/site-packages/discord/voice_client.py", line 35, in <module>
+    from .player import AudioPlayer, AudioSource
+  File "/app/.venv/lib/python3.13/site-packages/discord/player.py", line 29, in <module>
+    import audioop
+ModuleNotFoundError: No module named 'audioop'
+  File "/app/.venv/lib/python3.13/site-packages/discord/abc.py", line 59, in <module>
+    from .sku import SKU, Entitlement
+    from .voice_client import VoiceClient, VoiceProtocol
+  File "/app/.venv/lib/python3.13/site-packages/discord/sku.py", line 31, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/voice_client.py", line 35, in <module>
+    from .app_commands import MissingApplicationID
+Traceback (most recent call last):
+  File "/app/bot.py", line 5, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/__init__.py", line 12, in <module>
+    import discord
+    from .commands import *
+  File "/app/.venv/lib/python3.13/site-packages/discord/__init__.py", line 23, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/commands.py", line 53, in <module>
+    from .client import *
+  File "/app/.venv/lib/python3.13/site-packages/discord/client.py", line 51, in <module>
+    from .models import Choice
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/models.py", line 44, in <module>
+    from ..member import Member
+  File "/app/.venv/lib/python3.13/site-packages/discord/member.py", line 33, in <module>
+    import discord.abc
+    from .player import AudioPlayer, AudioSource
+  File "/app/.venv/lib/python3.13/site-packages/discord/player.py", line 29, in <module>
+    import audioop
+ModuleNotFoundError: No module named 'audioop'
+  File "/app/bot.py", line 5, in <module>
+    import discord
+  File "/app/.venv/lib/python3.13/site-packages/discord/__init__.py", line 23, in <module>
+    from .client import *
+    from .models import Choice
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/models.py", line 44, in <module>
+    import discord.abc
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/commands.py", line 53, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/abc.py", line 59, in <module>
+Traceback (most recent call last):
+    from .voice_client import VoiceClient, VoiceProtocol
+    from ..member import Member
+  File "/app/.venv/lib/python3.13/site-packages/discord/voice_client.py", line 35, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/client.py", line 51, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/member.py", line 33, in <module>
+    from .sku import SKU, Entitlement
+  File "/app/.venv/lib/python3.13/site-packages/discord/sku.py", line 31, in <module>
+    from .app_commands import MissingApplicationID
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/__init__.py", line 12, in <module>
+    from .commands import *
+    from .player import AudioPlayer, AudioSource
+  File "/app/.venv/lib/python3.13/site-packages/discord/player.py", line 29, in <module>
+    import audioop
+ModuleNotFoundError: No module named 'audioop'
+    from .commands import *
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/commands.py", line 53, in <module>
+    from .models import Choice
+  File "/app/bot.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/discord/client.py", line 51, in <module>
+    from .sku import SKU, Entitlement
+    import discord
+  File "/app/.venv/lib/python3.13/site-packages/discord/sku.py", line 31, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/__init__.py", line 23, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/models.py", line 44, in <module>
+    from .client import *
+    from .app_commands import MissingApplicationID
+    from ..member import Member
+  File "/app/.venv/lib/python3.13/site-packages/discord/app_commands/__init__.py", line 12, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/discord/member.py", line 33, in <module>
